@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/wrgraff/edc/issues"
   },
-  "homepage": "https://github.com/wrgraff/edc#readme"
+  "homepage": "https://github.com/wrgraff/edc#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^4.0.0",
+    "gulp-sass": "^4.0.2"
+  }
 }
