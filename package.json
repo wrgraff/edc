@@ -1,0 +1,19 @@
+{
+  "name": "edc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wrgraff/edc.git"
+  },
+  "author": "Artur Trifonov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wrgraff/edc/issues"
+  },
+  "homepage": "https://github.com/wrgraff/edc#readme"
+}
