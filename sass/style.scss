@@ -47,6 +47,24 @@ h1 {
         bottom: 0;
     }
 }
+.elements__labels {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+}
+
+.labels {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+.labels__item {
+    margin-right: 8px;
+    margin-top: 8px;
+    padding: 4px 16px;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 40px;
+}
 
 .container {
     position: absolute;
