@@ -1,2 +1,34 @@
 body {
-  background-color: green; }
+  padding: 24px;
+  background-color: smoke-gray; }
+
+.button {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background-color: red;
+  border: none;
+  box-shadow: 0 8px 16px rgba(255, 0, 0, 0.4);
+  transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 300ms ease; }
+  .button::before, .button::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    transform-origin: 50% 50%;
+    transition: transform 350ms ease-in-out; }
+  .button::after {
+    transform: translate(-50%, -50%) rotate(90deg); }
+  .button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 8px rgba(255, 0, 0, 0.4); }
+    .button:hover::before {
+      transform: translate(-50%, -50%) rotate(180deg); }
+    .button:hover::after {
+      transform: translate(-50%, -50%) rotate(360deg); }
