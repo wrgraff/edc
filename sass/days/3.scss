@@ -1,0 +1,71 @@
+.container {
+    background-color: seashell;
+}
+
+.checkbox {
+
+    input {
+        display: block;
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+    }
+}
+$checkbox-border-shift: -6px;
+.checkbox__name {
+    position: relative;
+    display: block;
+    padding: 8px 16px;
+    color: cornflowerblue;
+    background-color: white;
+    border: 1px solid cornflowerblue;
+    border-radius: 2400px;
+    box-shadow: 0 8px 16px rgba(cornflowerblue, .3);
+    transition: all 250ms ease-in-out;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: $checkbox-border-shift * 3;
+        right: $checkbox-border-shift * 3;
+        top: $checkbox-border-shift * 3;
+        bottom: $checkbox-border-shift * 3;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgba(cornflowerblue, 0);
+        border-radius: 2400px;
+        transition: all 250ms ease-in-out;
+    }
+
+    &:hover {
+        color: darken(cornflowerblue, 15%);
+        border-color: darken(cornflowerblue, 15%);
+        box-shadow: 0 14px 24px rgba(cornflowerblue, .3);
+    }
+
+    input:focus + & {
+        &::before {
+            left: $checkbox-border-shift;
+            right: $checkbox-border-shift;
+            top: $checkbox-border-shift;
+            bottom: $checkbox-border-shift;
+            border-color: rgba(cornflowerblue, .5);
+        }
+    }
+    input:checked + & {
+        color: white;
+        background-color: cornflowerblue;
+        box-shadow: 0 4px 12px rgba(cornflowerblue, .5);
+        transition: color 250ms ease-in-out 350ms,
+                    background-color 250ms ease-in-out,
+                    border-color 250ms ease-in-out,
+                    box-shadow 250ms ease-in-out;
+
+        &:hover {
+            background-color: darken(cornflowerblue, 15%);
+            box-shadow: 0 8px 16px rgba(cornflowerblue, .3);
+        }
+    }
+}
