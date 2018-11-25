@@ -26,6 +26,11 @@ h1 {
 
 .description {
     padding: 24px;
+    line-height: 1.6;
+
+    p {
+        max-width: 900px;
+    }
 }
 
 .elements {

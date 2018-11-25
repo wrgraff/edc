@@ -22,7 +22,10 @@ h1 {
   opacity: .8; }
 
 .description {
-  padding: 24px; }
+  padding: 24px;
+  line-height: 1.6; }
+  .description p {
+    max-width: 900px; }
 
 .elements {
   display: grid;
