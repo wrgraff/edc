@@ -3,7 +3,6 @@
 }
 
 .checkbox {
-
     input {
         display: block;
         width: 0;
@@ -17,7 +16,7 @@ $checkbox-border-shift: -6px;
 .checkbox__name {
     position: relative;
     display: block;
-    padding: 8px 16px;
+    padding: 8px 16px 7px;
     color: cornflowerblue;
     background-color: white;
     border: 1px solid cornflowerblue;
