@@ -1,0 +1,125 @@
+.container {
+    background-color: #E0F2F1;
+}
+
+.pushing-button input {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+$button-color: #26A69A;
+$button-focus-size: 8px;
+.button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 152px;
+    height: 152px;
+    border: none;
+    border-radius: 50%;
+    background-color: $button-color;
+    box-shadow: inset 8px 8px 16px rgba(white, .2),
+                inset -8px -8px 16px rgba(black, .1),
+                8px 8px 16px rgba(#00796B, .3);
+    transition: background-color 250ms ease-in-out,
+                box-shadow 250ms ease-in-out;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: $button-focus-size * -6;
+        right: $button-focus-size * -6;
+        top: $button-focus-size * -6;
+        bottom: $button-focus-size * -6;
+        border: $button-focus-size solid rgba($button-color, .14);
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 250ms ease-in-out;
+    }
+    .button__power {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        border: 8px solid white;
+        border-radius: 50%;
+        transition: border-color 250ms ease-in-out;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 2px;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 24px;
+            margin-top: -24px;
+            background-color: white;
+            border: 8px solid $button-color;
+            transition: border-color 250ms ease-in-out,
+                        background-color 250ms ease-in-out;
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: $button-focus-size * -4;
+            right: $button-focus-size * -4;
+            top: $button-focus-size * -4;
+            bottom: $button-focus-size * -4;
+            background-image: radial-gradient(closest-side, rgba(#FFEE58, .3), rgba(#FFEE58, 0));
+            border-radius: 50%;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 250ms ease-in-out;
+        }
+    }
+
+    &:hover {
+        background-color: lighten($button-color, 5%);
+        box-shadow: inset 8px 8px 16px rgba(white, .2),
+                    inset -8px -8px 16px rgba(black, .1),
+                    16px 16px 16px rgba(#00796B, .15);
+
+        .button__power::after {
+            border-color: lighten($button-color, 5%);
+        }
+    }
+    .pushing-button input:focus + & {
+        &::before {
+            left: $button-focus-size * -2;
+            right: $button-focus-size * -2;
+            top: $button-focus-size * -2;
+            bottom: $button-focus-size * -2;
+            opacity: 1;
+        }
+    }
+    .pushing-button input:checked + &,
+    &:active {
+        box-shadow: inset 8px 8px 16px rgba(black, .2),
+                    inset -8px -8px 16px rgba(white, .1),
+                    0 0 0 rgba(#00796B, 0),
+                    0 0 24px rgba(white, 1);
+
+        .button__power {
+            border-color: #FFF59D;
+            transition: border-color 250ms ease-in-out 200ms;
+
+            &::before {
+                opacity: 1;
+                transition: opacity 250ms ease-in-out 200ms;
+            }
+            &::after {
+                background-color: #FFF59D;
+                transition: border-color 250ms ease-in-out,
+                            background-color 250ms ease-in-out 200ms;
+            }
+        }
+    }
+
+}
