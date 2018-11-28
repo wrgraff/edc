@@ -1,0 +1,42 @@
+.container {
+    overflow: hidden;
+}
+
+$circle-step: 800ms;
+.hypno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #0097A7;
+}
+.hypno__circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation-name: circle-move;
+    animation-duration: $circle-step * 10;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            animation-delay: $circle-step * ($i - 1);
+        }
+    }
+
+}
+
+@keyframes circle-move {
+    0% {
+        width: 0;
+        height: 0;
+        background-color: rgba(white, .2);
+    }
+    100% {
+        width: 800px;
+        height: 800px;
+        background-color: rgba(white, 0);
+    }
+}
