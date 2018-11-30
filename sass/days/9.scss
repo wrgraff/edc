@@ -1,0 +1,57 @@
+.container {
+    background-color: #1A237E;
+}
+
+.planet {
+    position: relative;
+    width: 112px;
+    height: 112px;
+    background-image: linear-gradient(-14deg, rgba(138,107,76,1) 0%, rgba(127,114,107,1) 8%, rgba(158,168,183,1) 20%, rgba(158,168,183,1) 28%, rgba(92,66,45,1) 30%, rgba(173,140,111,1) 37%, rgba(158,168,183,1) 46%, rgba(158,168,183,1) 51%, rgba(173,140,111,1) 55%, rgba(173,140,111,1) 59%, rgba(158,168,183,1) 66%, rgba(92,66,45,1) 72%, rgba(173,140,111,1) 80%, rgba(133,114,94,1) 100%);
+    border-radius: 50%;
+    box-shadow: inset -8px -8px 32px 4px rgba(black, .8),
+                inset 8px 8px 32px 4px rgba(white, .8),
+                inset -4px -4px 8px -4px rgba(black, .8),
+                inset 4px 4px 8px -4px rgba(white, .8),
+                0 0 140px rgba(black, .2);
+    z-index: 10;
+}
+.satellite {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border-radius: 50%;
+    background-image: linear-gradient(40deg, rgba(220,237,200,1) 0%, rgba(201,166,154,1) 23%, rgba(184,209,214,1) 40%, rgba(146,209,217,1) 50%, rgba(224,169,150,1) 67%, rgba(220,237,200,1) 100%);
+    box-shadow: inset -8px -8px 8px rgba(black, .5),
+                inset 8px 8px 8px 4px rgba(white, .2),
+                inset -4px -4px 8px -4px rgba(black, .8);
+
+    animation-name: satellite-move;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes satellite-move {
+    0% {
+        transform: rotate(-10deg) translate(180px, 0) scale(1);
+        z-index: 15;
+    }
+    25% {
+        transform: rotate(-10deg) translate(0, 20px) scale(1.2);
+        z-index: 15;
+    }
+    50% {
+        transform: rotate(-10deg) translate(-180px, 0) scale(1);
+        z-index: 15;
+    }
+    75% {
+        transform: rotate(-10deg) translate(0, -20px) scale(.8);
+        z-index: 5;
+    }
+    100% {
+        transform: rotate(-10deg) translate(180px, 0) scale(1);
+        z-index: 15;
+    }
+}

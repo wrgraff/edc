@@ -1,0 +1,43 @@
+.container {
+  background-color: #1A237E; }
+
+.planet {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  background-image: linear-gradient(-14deg, #8a6b4c 0%, #7f726b 8%, #9ea8b7 20%, #9ea8b7 28%, #5c422d 30%, #ad8c6f 37%, #9ea8b7 46%, #9ea8b7 51%, #ad8c6f 55%, #ad8c6f 59%, #9ea8b7 66%, #5c422d 72%, #ad8c6f 80%, #85725e 100%);
+  border-radius: 50%;
+  box-shadow: inset -8px -8px 32px 4px rgba(0, 0, 0, 0.8), inset 8px 8px 32px 4px rgba(255, 255, 255, 0.8), inset -4px -4px 8px -4px rgba(0, 0, 0, 0.8), inset 4px 4px 8px -4px rgba(255, 255, 255, 0.8), 0 0 140px rgba(0, 0, 0, 0.2);
+  z-index: 10; }
+
+.satellite {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border-radius: 50%;
+  background-image: linear-gradient(40deg, #dcedc8 0%, #c9a69a 23%, #b8d1d6 40%, #92d1d9 50%, #e0a996 67%, #dcedc8 100%);
+  box-shadow: inset -8px -8px 8px rgba(0, 0, 0, 0.5), inset 8px 8px 8px 4px rgba(255, 255, 255, 0.2), inset -4px -4px 8px -4px rgba(0, 0, 0, 0.8);
+  animation-name: satellite-move;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
+@keyframes satellite-move {
+  0% {
+    transform: rotate(-10deg) translate(180px, 0) scale(1);
+    z-index: 15; }
+  25% {
+    transform: rotate(-10deg) translate(0, 20px) scale(1.2);
+    z-index: 15; }
+  50% {
+    transform: rotate(-10deg) translate(-180px, 0) scale(1);
+    z-index: 15; }
+  75% {
+    transform: rotate(-10deg) translate(0, -20px) scale(0.8);
+    z-index: 5; }
+  100% {
+    transform: rotate(-10deg) translate(180px, 0) scale(1);
+    z-index: 15; } }
