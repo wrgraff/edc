@@ -60,6 +60,9 @@ h1 {
   padding: 4px 16px;
   border: 1px solid black;
   border-radius: 40px; }
+  .elements__item_dark .labels__item {
+    color: white;
+    border-color: white; }
 
 .container {
   position: absolute;
