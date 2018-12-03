@@ -1,0 +1,88 @@
+.container {
+    background-color: #E0F7FA;
+}
+
+.button {
+    display: flex;
+    width: 140px;
+    height: 140px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+$burger-width: 88px;
+$burger-height: 12px;
+$burger-bg: #006064;
+.burger {
+    position: relative;
+    margin: auto;
+
+    .line {
+        display: block;
+        width: $burger-width;
+        height: $burger-height;
+        background-color: $burger-bg;
+        transform-origin: left center;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;
+    }
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: ($burger-height / -2) 0 0 ($burger-width / -2);
+        display: block;
+        width: $burger-width;
+        height: $burger-height;
+        background-color: $burger-bg;
+        transform-origin: left center;
+        transition: transform 250ms ease-in-out;
+    }
+    &::before {
+        transform: translateY($burger-height * -1.5);
+    }
+    &::after {
+        transform: translateY($burger-height * 1.5);
+    }
+
+    .button:hover &,
+    .button:focus & {
+        outline: none;
+
+        .line {
+            transform: scaleX(.8);
+        }
+        &::before {
+            transform: translateY($burger-height * -3);
+        }
+        &::after {
+            transform: translateY($burger-height * 3);
+        }
+    }
+
+    .button_active & {
+        .line {
+            transform: scaleX(1);
+        }
+        &::before {
+            transform: translateY($burger-height * 0) translateX($burger-height * .2) rotate(-30deg) scaleX(.7);
+        }
+        &::after {
+            transform: translateY($burger-height * 0) translateX($burger-height * .2) rotate(30deg) scaleX(.7);
+        }
+    }
+    .button_active:hover & {
+        .line {
+            transform: translateX($burger-height * -1.2) scaleX(1.25);
+        }
+        &::before {
+            transform: translateY($burger-height * 0) translateX($burger-height * -1) rotate(-30deg) scaleX(.7);
+        }
+        &::after {
+            transform: translateY($burger-height * 0) translateX($burger-height * -1) rotate(30deg) scaleX(.7);
+        }
+    }
+}

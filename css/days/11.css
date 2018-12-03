@@ -1,0 +1,63 @@
+.container {
+  background-color: #E0F7FA; }
+
+.button {
+  display: flex;
+  width: 140px;
+  height: 140px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none; }
+
+.burger {
+  position: relative;
+  margin: auto; }
+  .burger .line {
+    display: block;
+    width: 88px;
+    height: 12px;
+    background-color: #006064;
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out; }
+  .burger::before, .burger::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -6px 0 0 -44px;
+    display: block;
+    width: 88px;
+    height: 12px;
+    background-color: #006064;
+    transform-origin: left center;
+    transition: transform 250ms ease-in-out; }
+  .burger::before {
+    transform: translateY(-18px); }
+  .burger::after {
+    transform: translateY(18px); }
+  .button:hover .burger,
+  .button:focus .burger {
+    outline: none; }
+    .button:hover .burger .line,
+    .button:focus .burger .line {
+      transform: scaleX(0.8); }
+    .button:hover .burger::before,
+    .button:focus .burger::before {
+      transform: translateY(-36px); }
+    .button:hover .burger::after,
+    .button:focus .burger::after {
+      transform: translateY(36px); }
+  .button_active .burger .line {
+    transform: scaleX(1); }
+  .button_active .burger::before {
+    transform: translateY(0px) translateX(2.4px) rotate(-30deg) scaleX(0.7); }
+  .button_active .burger::after {
+    transform: translateY(0px) translateX(2.4px) rotate(30deg) scaleX(0.7); }
+  .button_active:hover .burger .line {
+    transform: translateX(-14.4px) scaleX(1.25); }
+  .button_active:hover .burger::before {
+    transform: translateY(0px) translateX(-12px) rotate(-30deg) scaleX(0.7); }
+  .button_active:hover .burger::after {
+    transform: translateY(0px) translateX(-12px) rotate(30deg) scaleX(0.7); }
