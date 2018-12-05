@@ -1,0 +1,32 @@
+.container {
+  background-color: #FFFDE7; }
+  .container * {
+    box-sizing: border-box; }
+
+.rect {
+  width: 184px;
+  height: 184px;
+  background-color: #FDD835;
+  border-radius: 8px;
+  transform: rotate(75deg) scale(0);
+  overflow: hidden;
+  transition: transform 250ms ease-out; }
+  .container:hover .rect {
+    transform: rotate(-6deg) scale(1);
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 184px;
+  height: 184px;
+  padding: 24px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  transform: rotate(-75deg) scale(1.5);
+  transition: transform 250ms ease-out; }
+  .container:hover .title {
+    transform: rotate(6deg) scale(1);
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275); }
