@@ -1,0 +1,121 @@
+.container {
+    background-color: #E8F5E9;
+    overflow: hidden;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.calendar {
+    position: relative;
+    width: 180px;
+    height: 220px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(#2E7D32, .15);
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 40px;
+        background-color: #4CAF50;
+        border-radius: 4px 4px 0 0;
+        box-shadow: 0 8px 16px rgba(#2E7D32, .15);
+        z-index: 3;
+    }
+}
+
+.paper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 220px;
+    padding: 64px 24px 24px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(#2E7D32, .15);
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    transform-origin: left top;
+    z-index: 2;
+
+    &:last-child {
+        animation-name: paper-down;
+        animation-duration: 10000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    &:first-child {
+        animation-name: black-day;
+        animation-duration: 10000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+.day {
+    color: gray;
+}
+.date {
+    font-size: 80px;
+    font-weight: 600;
+}
+.date_red {
+    color: red;
+}
+
+@keyframes paper-down {
+    0% {
+        transform: rotate(0);
+    }
+    3% {
+        transform: rotate(16deg);
+    }
+    7% {
+        transform: rotate(6deg);
+    }
+    12% {
+        transform: rotate(18deg);
+    }
+    18% {
+        transform: rotate(10deg);
+    }
+    27% {
+        transform: rotate(16deg);
+    }
+    40% {
+        transform: translateY(900px) rotate(18deg);
+    }
+    45%, 90% {
+        transform: translateY(1200px) rotate(20deg);
+        opacity: 1;
+    }
+    91% {
+        transform: translateY(1200px) rotate(20deg);
+        opacity: 0;
+    }
+    92% {
+        transform: rotate(0);
+        opacity: 0;
+    }
+    96%, 100% {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+@keyframes black-day {
+    0%, 45% {
+        background-color: white;
+    }
+    50%, 100% {
+        background-color: black;
+    }
+}
