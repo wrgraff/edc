@@ -1,0 +1,54 @@
+.container {
+    background-color: #FCE4EC;
+    perspective: 400px;
+}
+
+.card {
+    position: relative;
+    width: 180px;
+    height: 220px;
+    border-radius: 3px;
+    transform-style: preserve-3d;
+
+    animation-name: rotate;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+}
+
+.front,
+.back {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+}
+.front {
+    font-size: 56px;
+    font-weight: 500;
+    background-color: #E91E63;
+    transform: translateZ(1px);
+    // backface-visibility: hidden;
+}
+.back {
+    padding: 64px;
+    color: rgba(white, .8);
+    background-color: #F44336;
+    transform: rotateY(180deg);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
