@@ -1,0 +1,57 @@
+.container {
+  background-color: #F1F8E9;
+  perspective: 1600px;
+  transform-style: preserve-3d; }
+
+.cube {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  transform-style: preserve-3d;
+  animation-name: rotate;
+  animation-duration: 7000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
+.cube__front,
+.cube__back,
+.cube__left,
+.cube__right,
+.cube__top,
+.cube__bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: .6; }
+
+.cube__front {
+  background-color: #FFAB40;
+  transform: translateZ(60px); }
+
+.cube__back {
+  background-color: #FFEA00;
+  transform: translateZ(-60px); }
+
+.cube__left {
+  background-color: #FFFF00;
+  transform: rotateY(90deg) translateZ(-60px); }
+
+.cube__right {
+  background-color: #FFFF8D;
+  transform: rotateY(90deg) translateZ(60px); }
+
+.cube__top {
+  background-color: #FFD740;
+  transform: rotateX(90deg) translateZ(-60px); }
+
+.cube__bottom {
+  background-color: #FF9E80;
+  transform: rotateX(90deg) translateZ(60px); }
+
+@keyframes rotate {
+  0% {
+    transform: translateZ(300px) rotate3d(0, 1, 1, 0); }
+  100% {
+    transform: translateZ(300px) rotate3d(0, 1, 1, 360deg); } }
