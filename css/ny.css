@@ -1,0 +1,436 @@
+.container {
+  background-color: #F9FBE7;
+  overflow: hidden; }
+
+.tree {
+  position: relative;
+  width: 200px;
+  height: 170px;
+  background-image: linear-gradient(135deg, transparent 50px, #8BC34A 50px), linear-gradient(-135deg, transparent 50px, #8BC34A 50px), linear-gradient(135deg, transparent 60px, #7CB342 60px), linear-gradient(-135deg, transparent 60px, #7CB342 60px), linear-gradient(135deg, transparent 72px, #689F38 72px), linear-gradient(-135deg, transparent 72px, #689F38 72px);
+  background-position: 40px 0, 100px 0, 20px 30px, 100px 30px, 0 70px, 100px 70px;
+  background-size: 60px 60px, 60px 60px, 80px 80px, 80px 80px, 100px 100px, 100px 100px;
+  background-repeat: no-repeat; }
+  .tree::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #795548;
+    transform: translateX(-50%); }
+
+.ball {
+  position: absolute;
+  width: 16px;
+  height: 16px; }
+  .ball::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    width: 1px;
+    height: 6px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transform-origin: 0 0;
+    opacity: 0;
+    transform: scaleY(2.5) translateY(-2px); }
+    .greeting_active .ball::before {
+      animation-name: rope-show;
+      animation-duration: 800ms;
+      animation-fill-mode: forwards; }
+  .ball::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    border-radius: 50%;
+    transform-origin: 50% 20%;
+    transform: scale(0); }
+    .greeting_active .ball::after {
+      animation-name: ball-show;
+      animation-duration: 600ms;
+      animation-fill-mode: forwards; }
+  .ball:nth-child(1) {
+    left: 70px;
+    top: 52px; }
+    .ball:nth-child(1)::after {
+      background-image: radial-gradient(circle at 75%, #f99d97 0%, #F44336 80%); }
+  .ball:nth-child(2) {
+    left: 105px;
+    top: 38px; }
+    .ball:nth-child(2)::after {
+      background-image: radial-gradient(circle at 75%, #3be9ff 0%, #00BCD4 80%); }
+  .ball:nth-child(3) {
+    left: 50px;
+    top: 98px; }
+    .ball:nth-child(3)::after {
+      background-image: radial-gradient(circle at 75%, #3be9ff 0%, #00BCD4 80%); }
+  .ball:nth-child(4) {
+    left: 100px;
+    top: 80px; }
+    .ball:nth-child(4)::after {
+      background-image: radial-gradient(circle at 75%, #fff5a1 0%, #FFEB3B 80%); }
+  .ball:nth-child(5) {
+    left: 140px;
+    top: 105px; }
+    .ball:nth-child(5)::after {
+      background-image: radial-gradient(circle at 75%, #f99d97 0%, #F44336 80%); }
+  .ball:nth-child(6) {
+    left: 30px;
+    top: 160px; }
+    .ball:nth-child(6)::after {
+      background-image: radial-gradient(circle at 75%, #f99d97 0%, #F44336 80%); }
+  .ball:nth-child(7) {
+    left: 64px;
+    top: 140px; }
+    .ball:nth-child(7)::after {
+      background-image: radial-gradient(circle at 75%, #fff5a1 0%, #FFEB3B 80%); }
+  .ball:nth-child(8) {
+    left: 107px;
+    top: 130px; }
+    .ball:nth-child(8)::after {
+      background-image: radial-gradient(circle at 75%, #f2f6cc 0%, #DCE775 80%); }
+  .ball:nth-child(9) {
+    left: 147px;
+    top: 165px; }
+    .ball:nth-child(9)::after {
+      background-image: radial-gradient(circle at 75%, #3be9ff 0%, #00BCD4 80%); }
+  .ball:nth-child(1)::before {
+    animation-delay: 300ms; }
+  .ball:nth-child(1)::after {
+    animation-delay: 300ms; }
+  .ball:nth-child(2)::before {
+    animation-delay: 600ms; }
+  .ball:nth-child(2)::after {
+    animation-delay: 600ms; }
+  .ball:nth-child(3)::before {
+    animation-delay: 900ms; }
+  .ball:nth-child(3)::after {
+    animation-delay: 900ms; }
+  .ball:nth-child(4)::before {
+    animation-delay: 1200ms; }
+  .ball:nth-child(4)::after {
+    animation-delay: 1200ms; }
+  .ball:nth-child(5)::before {
+    animation-delay: 1500ms; }
+  .ball:nth-child(5)::after {
+    animation-delay: 1500ms; }
+  .ball:nth-child(6)::before {
+    animation-delay: 1800ms; }
+  .ball:nth-child(6)::after {
+    animation-delay: 1800ms; }
+  .ball:nth-child(7)::before {
+    animation-delay: 2100ms; }
+  .ball:nth-child(7)::after {
+    animation-delay: 2100ms; }
+  .ball:nth-child(8)::before {
+    animation-delay: 2400ms; }
+  .ball:nth-child(8)::after {
+    animation-delay: 2400ms; }
+  .ball:nth-child(9)::before {
+    animation-delay: 2700ms; }
+  .ball:nth-child(9)::after {
+    animation-delay: 2700ms; }
+
+@keyframes ball-show {
+  0% {
+    transform: scale(0) translateY(-18px); }
+  100% {
+    transform: scale(1) translateY(0px); } }
+
+@keyframes rope-show {
+  0% {
+    opacity: 0;
+    transform: scaleY(2.5) translateY(-2px); }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0px); } }
+
+.star {
+  position: absolute;
+  left: calc(50% - 8px);
+  top: 0;
+  width: 16px;
+  height: 16px;
+  transform-origin: 50% 50%;
+  transform: scale(0) rotate(-70deg); }
+  .greeting_active .star {
+    animation-name: star-show;
+    animation-delay: 3000ms;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards; }
+
+.star__ray {
+  position: absolute;
+  left: calc(50% - 4px);
+  top: calc(50% - 16px);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 4px 14px 4px;
+  border-color: transparent transparent #FFD740 transparent;
+  transform-origin: 50% 100%; }
+  .star__ray:nth-child(2) {
+    transform: rotate(72deg); }
+  .star__ray:nth-child(3) {
+    transform: rotate(144deg); }
+  .star__ray:nth-child(4) {
+    transform: rotate(216deg); }
+  .star__ray:nth-child(5) {
+    transform: rotate(288deg); }
+
+@keyframes star-show {
+  0% {
+    transform: scale(0) rotate(-70deg); }
+  100% {
+    transform: scale(1) rotate(0deg); } }
+
+.sign {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+
+.sign__congratulation {
+  margin: 0;
+  padding: 20px;
+  padding-bottom: 20px;
+  font-weight: 600;
+  font-size: 102px;
+  line-height: 1.3;
+  z-index: -1;
+  color: #E6EE9C;
+  opacity: 0;
+  transform-origin: center top;
+  transform: scale(0.8); }
+  .greeting_active .sign__congratulation {
+    animation-name: congratulation-show;
+    animation-duration: 600ms;
+    animation-delay: 3300ms;
+    animation-fill-mode: forwards; }
+
+.sign__addressee {
+  margin: 0;
+  padding: 20px;
+  padding-top: 0;
+  font-weight: 600;
+  font-size: 102px;
+  line-height: 1.3;
+  z-index: 3;
+  color: #FF1744;
+  opacity: 0;
+  transform-origin: center bottom;
+  transform: scale(0.7); }
+  .greeting_active .sign__addressee {
+    animation-name: congratulation-show;
+    animation-duration: 700ms;
+    animation-delay: 3500ms;
+    animation-fill-mode: forwards; }
+
+@keyframes congratulation-show {
+  0% {
+    opacity: 0;
+    transform: scale(0.8); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes addressee-show {
+  0% {
+    opacity: 0;
+    transform: scale(0.8); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+.snow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -6px;
+  bottom: 0;
+  z-index: 5; }
+
+.snow__flake {
+  position: absolute;
+  left: 8px;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%; }
+  .greeting_active .snow__flake {
+    animation-name: snowfall;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
+  .snow__flake:nth-child(2) {
+    left: 32px; }
+  .snow__flake:nth-child(3) {
+    left: 64px; }
+  .snow__flake:nth-child(4) {
+    left: 96px; }
+  .snow__flake:nth-child(5) {
+    left: 128px; }
+  .snow__flake:nth-child(6) {
+    left: 160px; }
+  .snow__flake:nth-child(7) {
+    left: 192px; }
+  .snow__flake:nth-child(8) {
+    left: 224px; }
+  .snow__flake:nth-child(9) {
+    left: 256px; }
+  .snow__flake:nth-child(10) {
+    left: 288px; }
+  .snow__flake:nth-child(11) {
+    left: 320px; }
+  .snow__flake:nth-child(12) {
+    left: 352px; }
+  .snow__flake:nth-child(13) {
+    left: 384px; }
+  .snow__flake:nth-child(14) {
+    left: 416px; }
+  .snow__flake:nth-child(15) {
+    left: 448px; }
+  .snow__flake:nth-child(16) {
+    left: 480px; }
+  .snow__flake:nth-child(17) {
+    left: 512px; }
+  .snow__flake:nth-child(18) {
+    left: 544px; }
+  .snow__flake:nth-child(19) {
+    left: 576px; }
+  .snow__flake:nth-child(20) {
+    left: 608px; }
+  .snow__flake:nth-child(21) {
+    left: 640px; }
+  .snow__flake:nth-child(17) {
+    animation-delay: 3500ms;
+    animation-duration: 8000ms; }
+  .snow__flake:nth-child(14) {
+    animation-delay: 3700ms;
+    animation-duration: 8200ms; }
+  .snow__flake:nth-child(16) {
+    animation-delay: 3900ms;
+    animation-duration: 8400ms; }
+  .snow__flake:nth-child(10) {
+    animation-delay: 4100ms;
+    animation-duration: 8600ms; }
+  .snow__flake:nth-child(8) {
+    animation-delay: 4300ms;
+    animation-duration: 8800ms; }
+  .snow__flake:nth-child(5) {
+    animation-delay: 4500ms;
+    animation-duration: 9000ms; }
+  .snow__flake:nth-child(15) {
+    animation-delay: 4700ms;
+    animation-duration: 9200ms; }
+  .snow__flake:nth-child(13) {
+    animation-delay: 4900ms;
+    animation-duration: 9400ms; }
+  .snow__flake:nth-child(1) {
+    animation-delay: 5100ms;
+    animation-duration: 9600ms; }
+  .snow__flake:nth-child(3) {
+    animation-delay: 5300ms;
+    animation-duration: 9800ms; }
+  .snow__flake:nth-child(18) {
+    animation-delay: 5500ms;
+    animation-duration: 10000ms; }
+  .snow__flake:nth-child(12) {
+    animation-delay: 5700ms;
+    animation-duration: 10200ms; }
+  .snow__flake:nth-child(9) {
+    animation-delay: 5900ms;
+    animation-duration: 10400ms; }
+  .snow__flake:nth-child(6) {
+    animation-delay: 5900ms;
+    animation-duration: 10600ms; }
+  .snow__flake:nth-child(2) {
+    animation-delay: 6100ms;
+    animation-duration: 10800ms; }
+  .snow__flake:nth-child(7) {
+    animation-delay: 6300ms;
+    animation-duration: 11000ms; }
+  .snow__flake:nth-child(4) {
+    animation-delay: 6500ms;
+    animation-duration: 11200ms; }
+  .snow__flake:nth-child(11) {
+    animation-delay: 6700ms;
+    animation-duration: 11400ms; }
+  .snow__flake:nth-child(19) {
+    animation-delay: 5700ms;
+    animation-duration: 10200ms; }
+  .snow__flake:nth-child(20) {
+    animation-delay: 5900ms;
+    animation-duration: 10400ms; }
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(600px); } }
+
+.button {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(0) scale(1);
+  z-index: 50;
+  padding: 12px 24px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 24px;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  transition: background-color 250ms ease, transform 500ms ease; }
+  .button::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    right: -8px;
+    top: -8px;
+    bottom: -8px;
+    border: 4px solid rgba(174, 234, 0, 0.14);
+    border-radius: 8px;
+    opacity: 0;
+    transition: all 250ms ease-in-out; }
+  .button:focus {
+    outline: none; }
+    .button:focus::before {
+      opacity: 1; }
+
+.button_show {
+  background-color: #4DD0E1;
+  box-shadow: 0 4px 16px -6px rgba(0, 96, 100, 0.6); }
+  .button_show:hover {
+    background-color: #63d6e5; }
+  .button_show:active {
+    background-color: #37cadd; }
+
+.button_relaunch {
+  padding: 8px 16px;
+  font-size: 12px;
+  color: black;
+  background-color: #FDD835;
+  box-shadow: 0 4px 16px -6px rgba(245, 127, 23, 0.6);
+  transform: translateX(-50%) translateY(120px) scale(0); }
+  .button_relaunch:hover {
+    background-color: #fddd4e; }
+  .button_relaunch:active {
+    background-color: #fdd31c; }
+
+.button_hidden {
+  transform: translateX(-50%) translateY(120px) scale(0); }
+
+.greeting_active ~ .button_relaunch {
+  transform: translateX(-50%) translateY(0) scale(1);
+  transition-delay: 10000ms; }

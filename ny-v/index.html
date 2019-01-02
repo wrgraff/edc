@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Every day I'm coding</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/ny.css">
+</head>
+<body>
+    <div class="container">
+        <div class="greeting">
+            <div class="tree">
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="star">
+                    <div class="star__ray"></div>
+                    <div class="star__ray"></div>
+                    <div class="star__ray"></div>
+                    <div class="star__ray"></div>
+                    <div class="star__ray"></div>
+                </div>
+            </div>
+            <div class="sign">
+                <p class="sign__congratulation">Happy New Year,</p>
+                <p class="sign__addressee">Vera!</p>
+            </div>
+            <div class="snow">
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+                <div class="snow__flake"></div>
+            </div>
+        </div>
+        <button class="button button_show">
+            Click me! ;)
+        </button>
+        <button class="button button_relaunch">
+            Launch again
+        </button>
+    </div>
+
+    <script>
+        var buttonShow = document.querySelector('.button_show'),
+            buttonRelaunch = document.querySelector('.button_relaunch'),
+            greeting = document.querySelector('.greeting');
+
+        buttonShow.addEventListener('click', function() {
+            greeting.classList.toggle('greeting_active');
+            buttonShow.classList.add('button_hidden');
+        });
+        buttonRelaunch.addEventListener('click', function() {
+            greeting.classList.remove('greeting_active');
+            setTimeout(function() {
+                greeting.classList.add('greeting_active');
+            }, 600);
+        });
+    </script>
+</body>
+</html>
