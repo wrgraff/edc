@@ -6,10 +6,15 @@
 .cube {
   width: 200px;
   height: 200px;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
   transform-style: preserve-3d;
-  transform: translateZ(500px) rotate3d(1, 0, 0.5, 60deg);
-  transition: transform 200ms ease; }
+  transform: translateX(-100px) translateY(-170px) translateZ(200px) scale(0.8) rotate3d(1, 0, 0, 90deg) rotateX(-10deg) rotateZ(-10deg);
+  animation-name: rotate;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
 
 .cube__front,
 .cube__back,
@@ -69,5 +74,81 @@
   width: 200px;
   height: 50px;
   background-color: #FF7043;
+  transform-origin: left top;
+  transform: rotateX(-90deg); }
+
+@keyframes rotate {
+  0% {
+    transform: translateX(-100px) translateY(-170px) translateZ(200px) scale(0.8) rotate3d(1, 0, 0, 90deg) rotateX(-10deg) rotateZ(0deg); }
+  100% {
+    transform: translateX(-100px) translateY(-170px) translateZ(200px) scale(0.8) rotate3d(1, 0, 0, 90deg) rotateX(-10deg) rotateZ(360deg); } }
+
+.column {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-style: preserve-3d;
+  transform: translateY(-20px) translateX(-20px) translateZ(-50px);
+  transition: transform 200ms ease; }
+
+.column__front,
+.column__back,
+.column__left,
+.column__right,
+.column__top,
+.column__bottom {
+  position: absolute; }
+
+.column__back {
+  width: 40px;
+  height: 40px;
+  transform: translateZ(-10px);
+  background-color: #FFF3E0;
+  background-image: linear-gradient(0deg, #fff 0px, #fff 4px, #FFF3E0 4px, #FFF3E0 8px);
+  background-size: 8px 8px; }
+
+.column__left {
+  right: 100%;
+  top: 0;
+  width: 180px;
+  height: 40px;
+  background-color: #FFF3E0;
+  background-image: linear-gradient(180deg, #fff 0px, #fff 4px, #FFF3E0 4px, #FFF3E0 8px);
+  background-size: 8px 8px;
+  transform-origin: right top;
+  transform: rotateY(-90deg); }
+
+.column__right {
+  left: 100%;
+  top: 0;
+  width: 180px;
+  height: 40px;
+  background-color: #FFF3E0;
+  background-image: linear-gradient(0deg, #fff 0px, #fff 4px, #FFF3E0 4px, #FFF3E0 8px);
+  background-size: 8px 8px;
+  transform-origin: left top;
+  transform: rotateY(90deg); }
+
+.column__top {
+  left: 0;
+  bottom: 100%;
+  width: 40px;
+  height: 180px;
+  background-color: #FFF3E0;
+  background-image: linear-gradient(90deg, #fff 0px, #fff 4px, #FFF3E0 4px, #FFF3E0 8px);
+  background-size: 8px 8px;
+  transform-origin: left bottom;
+  transform: rotateX(90deg); }
+
+.column__bottom {
+  left: 0;
+  top: 100%;
+  width: 40px;
+  height: 180px;
+  background-color: #FFF3E0;
+  background-image: linear-gradient(90deg, #fff 0px, #fff 4px, #FFF3E0 4px, #FFF3E0 8px);
+  background-size: 8px 8px;
   transform-origin: left top;
   transform: rotateX(-90deg); }
